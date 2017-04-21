@@ -19,4 +19,6 @@ public interface SampleModelService {
 
     List<SampleModel> findAll();
 
+    void saveModel(SampleModel sampleModel);
+
 }

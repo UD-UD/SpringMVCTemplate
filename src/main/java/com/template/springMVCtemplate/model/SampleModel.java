@@ -6,6 +6,8 @@ import com.template.springMVCtemplate.model.mappingExample.ModelForOneToOneBidir
 import com.template.springMVCtemplate.model.mappingExample.ModelForOneToOneForiegnKey;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.AbstractList;
 import java.util.ArrayList;
@@ -88,6 +90,19 @@ import java.util.List;
  * and inverseJoinColumns refers to the column of inverse side of relationship(MANY_ID of ModelForManyToManyUnidirectional).Primary key of this joined table
  * is combination of ID & MANY_ID.
  *
+ * We can also put some validation constraint using JSR303 and hibernate-validator.
+ * Here JSR303 is a specification and hibernate-validator is the implementation.
+ * Annotation such as :
+ * @Size: Specifies the length of the fields
+ * @NotNull: Field should not be null
+ * @DateTimeFormat(pattern="dd/MM/yyyy") :Used in validating dates when we require that dates should be entered in a
+ *                                        specified format.
+ * @Past : Also used with date to set the constraint that date should be a past date as compared to today.
+ * @Email: Validates a email address
+ * @NotEmpty: checks if the field is empty.
+ * Note : @Email and @NotEmpty are part of hibernate-validater and not provided in JSR303 specification.
+ *
+ *
  *
  */
 
@@ -104,8 +119,11 @@ public class SampleModel implements Serializable{
     @Column(name = "id",length = 2,nullable = true)
     private int id;
 
+    @NotNull
+    @Size(min = 1,max = 33)
     @Column(name = "name",length = 34,nullable = true)
     private String name;
+
 
     @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn

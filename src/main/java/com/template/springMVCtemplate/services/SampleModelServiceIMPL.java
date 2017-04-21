@@ -30,4 +30,9 @@ public class SampleModelServiceIMPL implements SampleModelService {
     public List<SampleModel> findAll() {
         return dao.findAllSampleModel();
     }
+
+    @Override
+    public void saveModel(SampleModel sampleModel) {
+        dao.save(sampleModel);
+    }
 }
