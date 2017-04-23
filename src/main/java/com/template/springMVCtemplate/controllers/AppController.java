@@ -6,10 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -38,6 +41,8 @@ public class AppController {
      *                  completing the request.
      * @return the name(allSample) of the view ,{here(allSample.jsp)}, contained in views folder{webapp/web-inf/views} which will render
      * the data in the model map.
+     *
+     * addAttribute() : put a value in the map to be rendered in UI.
      *
      * @Todo : create views to handle these response
      */
@@ -73,7 +78,7 @@ public class AppController {
      *
      * Note that in case of validation failure, default generalized error messages are shown on screen which
      * may not be desirable. Instead, you can override this behavior providing internationalized messages
-     * specific to each field. To do that, we need to configure MessageSource(messages.properties in resource folder) in application configuration
+     * specific to each field. To do that, we need to configure MessageSource(messages.properties in resource folder from App.Config) in application configuration
      * class and provide properties files containing actual messages which we will do next.
      */
     @RequestMapping(value="/new",method = RequestMethod.POST)
@@ -84,6 +89,33 @@ public class AppController {
         }
         sampleModelService.saveModel(sampleModel);
         return "success";
+    }
+
+    /**
+     *
+     * @param ssoId  : It uses @PathVariable attribute which is used to get the value from the url.
+     *               Note: variable name in @pathVariable {ssoid} should be same as that of in method parameters.
+     */
+
+    @RequestMapping(value = { "/edit-user-{ssoId}" }, method = RequestMethod.GET)
+    public String editUser(@PathVariable String ssoId, ModelMap model) {
+        return "";
+    }
+
+    /**
+     * @ModelAttribute : initializes a variable ("for example "section") which will contain data and will be rendered
+     * in in UI
+     * @return a model object containing data.
+     */
+
+    @ModelAttribute("sections")
+    public List<String> initializeSections() {
+
+        List<String> sections = new ArrayList<String>();
+        sections.add("Graduate");
+        sections.add("Post Graduate");
+        sections.add("Research");
+        return sections;
     }
 
 

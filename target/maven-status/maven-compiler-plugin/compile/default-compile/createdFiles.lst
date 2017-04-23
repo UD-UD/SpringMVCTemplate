@@ -1,0 +1,15 @@
+com/template/springMVCtemplate/model/mappingExample/ModelForOneToOneForiegnKey.class
+com/template/springMVCtemplate/configuration/AppConfig.class
+com/template/springMVCtemplate/model/mappingExample/ModelForOneToOneBidirectional.class
+com/template/springMVCtemplate/controllers/RestController.class
+com/template/springMVCtemplate/controllers/AppController.class
+com/template/springMVCtemplate/services/SampleModelService.class
+com/template/springMVCtemplate/dao/SampleDaoImpl.class
+com/template/springMVCtemplate/model/SampleModel.class
+com/template/springMVCtemplate/model/mappingExample/ModelForManyToManyUnidirectional.class
+com/template/springMVCtemplate/model/mappingExample/ModelForOneToOne.class
+com/template/springMVCtemplate/configuration/HibernateConfig.class
+com/template/springMVCtemplate/dao/SampleDao.class
+com/template/springMVCtemplate/configuration/AppInit.class
+com/template/springMVCtemplate/services/SampleModelServiceIMPL.class
+com/template/springMVCtemplate/dao/AbstractDao.class

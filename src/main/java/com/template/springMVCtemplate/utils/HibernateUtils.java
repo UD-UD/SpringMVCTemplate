@@ -1,10 +1,13 @@
+/*
 package com.template.springMVCtemplate.utils;
 
+*/
 /**
  * Created by ud on 19/4/17.
  *
  * Sample class to test Hibenate Models
- */
+ *//*
+
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
@@ -28,3 +31,4 @@ public class HibernateUtils {
     }
 
 }
+*/

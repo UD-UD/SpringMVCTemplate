@@ -1,3 +1,4 @@
+/*
 package com.template.springMVCtemplate.utils;
 
 import com.template.springMVCtemplate.model.mappingExample.ModelForManyToManyUnidirectional;
@@ -7,16 +8,19 @@ import com.template.springMVCtemplate.model.SampleModel;
 import com.template.springMVCtemplate.model.mappingExample.ModelForOneToOneForiegnKey;
 import org.hibernate.Session;
 
+*/
 /**
  * Created by ud on 19/4/17.
- */
+ *//*
+
 public class HibernateMainMappingTest {
     public static void main(String args[]){
         Session session = HibernateUtils.getSessionFactory().openSession();
         session.beginTransaction();
 
     //-------------------------------ONE TO ONE UNIDIRECTIONAL MAPPING------------------------------------
-       /* ModelForOneToOne oneToOne=new ModelForOneToOne();
+       */
+/* ModelForOneToOne oneToOne=new ModelForOneToOne();
         SampleModel sampleModel=new SampleModel();
         oneToOne.setName("Ujjal is good");
         sampleModel.setName("Ujjal Dutta");
@@ -25,7 +29,8 @@ public class HibernateMainMappingTest {
         sampleModel.setOneToOne(oneToOne);
         session.save(sampleModel);           //writing to data base
         session.getTransaction().commit();   //commiting changes
-        session.close();                     //closeing the connection*/
+        session.close();                     //closeing the connection*//*
+
 
      //---------------------------------ONE TO ONE BIDIRECTIONAL------------------------------------------
         ModelForOneToOne oneToOne=new ModelForOneToOne();
@@ -64,6 +69,8 @@ public class HibernateMainMappingTest {
         session.save(sampleModel);
         session.save(sampleModel2);
         session.getTransaction().commit();   //commiting changes
-        session.close();                     //closeing the connection*/
+        session.close();                     //closeing the connection*//*
+
     }
 }
+*/

@@ -9,9 +9,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.util.AbstractList;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by ud on 18/4/17.
@@ -138,17 +136,17 @@ public class SampleModel implements Serializable{
     @JoinColumn(name = "FOREIGN_ID")
     private ModelForOneToOneForiegnKey oneToOneForiegnKey;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinTable(name="MANY_TO_MANY",
                 joinColumns = {@JoinColumn(name = "id")},
                 inverseJoinColumns = {@JoinColumn(name = "MANY_ID")})
-    List<ModelForManyToManyUnidirectional> manyUnidirectionals=new ArrayList<ModelForManyToManyUnidirectional>();
+    private Set<ModelForManyToManyUnidirectional> manyUnidirectionals=new HashSet<ModelForManyToManyUnidirectional>();
 
-    public List<ModelForManyToManyUnidirectional> getManyUnidirectionals() {
+    public Set<ModelForManyToManyUnidirectional> getManyUnidirectionals() {
         return manyUnidirectionals;
     }
 
-    public void setManyUnidirectionals(List<ModelForManyToManyUnidirectional> manyUnidirectionals) {
+    public void setManyUnidirectionals(Set<ModelForManyToManyUnidirectional> manyUnidirectionals) {
         this.manyUnidirectionals = manyUnidirectionals;
     }
 

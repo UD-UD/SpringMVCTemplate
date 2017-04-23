@@ -62,6 +62,9 @@ public class SampleDaoImpl extends AbstractDao<Integer,SampleModel> implements S
         Criteria criteria=createEntityCriteria().addOrder(Order.asc("name"));
         criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY); //pulls only distinct objects
         List<SampleModel> sampleModels= (List<SampleModel>)criteria.list();
+        for(SampleModel sampleModel : sampleModels){
+            Hibernate.initialize(sampleModel.getManyUnidirectionals());
+        }
         return sampleModels;
     }
 }

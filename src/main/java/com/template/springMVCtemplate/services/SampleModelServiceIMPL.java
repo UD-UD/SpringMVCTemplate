@@ -4,6 +4,7 @@ import com.template.springMVCtemplate.dao.SampleDao;
 import com.template.springMVCtemplate.model.SampleModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * Created by ud on 21/4/17.
  */
 @Service("sampleModelService")
+@Transactional
 public class SampleModelServiceIMPL implements SampleModelService {
 
     @Autowired

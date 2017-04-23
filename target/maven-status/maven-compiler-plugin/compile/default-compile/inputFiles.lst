@@ -1,0 +1,17 @@
+/home/ud/SpringWorkspace/Spring Projects/SpringMVCTemplate/src/main/java/com/template/springMVCtemplate/controllers/AppController.java
+/home/ud/SpringWorkspace/Spring Projects/SpringMVCTemplate/src/main/java/com/template/springMVCtemplate/services/SampleModelServiceIMPL.java
+/home/ud/SpringWorkspace/Spring Projects/SpringMVCTemplate/src/main/java/com/template/springMVCtemplate/model/SampleModel.java
+/home/ud/SpringWorkspace/Spring Projects/SpringMVCTemplate/src/main/java/com/template/springMVCtemplate/dao/SampleDao.java
+/home/ud/SpringWorkspace/Spring Projects/SpringMVCTemplate/src/main/java/com/template/springMVCtemplate/model/mappingExample/ModelForOneToOneBidirectional.java
+/home/ud/SpringWorkspace/Spring Projects/SpringMVCTemplate/src/main/java/com/template/springMVCtemplate/controllers/RestController.java
+/home/ud/SpringWorkspace/Spring Projects/SpringMVCTemplate/src/main/java/com/template/springMVCtemplate/model/mappingExample/ModelForManyToManyUnidirectional.java
+/home/ud/SpringWorkspace/Spring Projects/SpringMVCTemplate/src/main/java/com/template/springMVCtemplate/configuration/AppConfig.java
+/home/ud/SpringWorkspace/Spring Projects/SpringMVCTemplate/src/main/java/com/template/springMVCtemplate/model/mappingExample/ModelForOneToOne.java
+/home/ud/SpringWorkspace/Spring Projects/SpringMVCTemplate/src/main/java/com/template/springMVCtemplate/services/SampleModelService.java
+/home/ud/SpringWorkspace/Spring Projects/SpringMVCTemplate/src/main/java/com/template/springMVCtemplate/model/mappingExample/ModelForOneToOneForiegnKey.java
+/home/ud/SpringWorkspace/Spring Projects/SpringMVCTemplate/src/main/java/com/template/springMVCtemplate/dao/SampleDaoImpl.java
+/home/ud/SpringWorkspace/Spring Projects/SpringMVCTemplate/src/main/java/com/template/springMVCtemplate/configuration/HibernateConfig.java
+/home/ud/SpringWorkspace/Spring Projects/SpringMVCTemplate/src/main/java/com/template/springMVCtemplate/utils/HibernateMainMappingTest.java
+/home/ud/SpringWorkspace/Spring Projects/SpringMVCTemplate/src/main/java/com/template/springMVCtemplate/dao/AbstractDao.java
+/home/ud/SpringWorkspace/Spring Projects/SpringMVCTemplate/src/main/java/com/template/springMVCtemplate/configuration/AppInit.java
+/home/ud/SpringWorkspace/Spring Projects/SpringMVCTemplate/src/main/java/com/template/springMVCtemplate/utils/HibernateUtils.java
