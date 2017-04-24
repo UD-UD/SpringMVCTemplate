@@ -87,7 +87,9 @@ public class AppController {
         if(result.hasErrors()) {
             return "newSample";
         }
+
         sampleModelService.saveModel(sampleModel);
+
         return "success";
     }
 
