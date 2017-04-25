@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <%-- <div class="row">
             <div class="form-group col-md-12">
                 <label class="col-md-3 control-lable" for="oneToOne.name">Home Address/label>
                 <div class="col-md-7">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --%>
 
         <div class="row">
             <div class="form-group col-md-12">
@@ -79,19 +79,19 @@ input-sm" />
         </div>
 
 
-        <%-- <div class="row">
+        <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3 control-lable" for="userProfiles">Roles</label>
+                <label class="col-md-3 control-lable" for="manyUnidirectionals">Roles</label>
                 <div class="col-md-7">
-                    <form:select path="userProfiles" items="${roles}" multiple="true" itemValue="id"
+                    <form:select path="manyUnidirectionals" items="${techSkills}" multiple="true" itemValue="id"
 
-itemLabel="type" class="form-control input-sm" />
+itemLabel="name" class="form-control input-sm" />
                     <div class="has-error">
-                        <form:errors path="userProfiles" class="help-inline"/>
+                        <form:errors path="manyUnidirectionals" class="help-inline"/>
                     </div>
                 </div>
             </div>
-        </div> --%>
+        </div>
 
         <div class="row">
             <div class="form-actions floatRight">

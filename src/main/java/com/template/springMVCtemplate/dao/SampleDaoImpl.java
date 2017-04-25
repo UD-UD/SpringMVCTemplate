@@ -49,7 +49,7 @@ public class SampleDaoImpl extends AbstractDao<Integer,SampleModel> implements S
     @Override
     public void deleteByName(String sso) {
         Criteria criteria=createEntityCriteria();
-        criteria.add(Restrictions.eq("sso",sso));
+        criteria.add(Restrictions.eq("id",Integer.parseInt(sso)));
         SampleModel sampleModel=(SampleModel)criteria.uniqueResult();
         if(sampleModel!=null){
             Hibernate.initialize(sampleModel.getManyUnidirectionals());
@@ -66,5 +66,10 @@ public class SampleDaoImpl extends AbstractDao<Integer,SampleModel> implements S
             Hibernate.initialize(sampleModel.getManyUnidirectionals());
         }
         return sampleModels;
+    }
+
+    @Override
+    public void updateSample(SampleModel sampleModel) {
+        update(sampleModel);
     }
 }

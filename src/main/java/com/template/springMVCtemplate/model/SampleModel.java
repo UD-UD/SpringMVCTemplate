@@ -123,20 +123,20 @@ public class SampleModel implements Serializable{
     private String name;
 
 
-    @OneToOne(cascade = CascadeType.ALL)
+   /* @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
-    private ModelForOneToOne oneToOne;
+    private ModelForOneToOne oneToOne;*/
 
 
     @OneToOne(mappedBy = "sampleModel",cascade = CascadeType.ALL) //A bidirectional strategy
     private ModelForOneToOneBidirectional oneToOneBidirectional;
 
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "FOREIGN_ID")
     private ModelForOneToOneForiegnKey oneToOneForiegnKey;
 
-    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.MERGE,fetch = FetchType.LAZY)
     @JoinTable(name="MANY_TO_MANY",
                 joinColumns = {@JoinColumn(name = "id")},
                 inverseJoinColumns = {@JoinColumn(name = "MANY_ID")})
@@ -150,13 +150,13 @@ public class SampleModel implements Serializable{
         this.manyUnidirectionals = manyUnidirectionals;
     }
 
-    public ModelForOneToOne getOneToOne() {
+    /*public ModelForOneToOne getOneToOne() {
         return oneToOne;
     }
 
     public void setOneToOne(ModelForOneToOne oneToOne) {
         this.oneToOne = oneToOne;
-    }
+    }*/
 
     public int getId() {
         return id;

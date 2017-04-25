@@ -21,4 +21,5 @@ public interface SampleDao {
     void deleteByName(String sso);
 
     List<SampleModel> findAllSampleModel();
+    void updateSample(SampleModel sampleModel);
 }

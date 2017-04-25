@@ -1,10 +1,13 @@
 package com.template.springMVCtemplate.configuration;
 
+import com.template.springMVCtemplate.converters.ManyToManyFilter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -27,6 +30,8 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan(basePackages = "com.template.springMVCtemplate")
 public class AppConfig extends WebMvcConfigurerAdapter {
 
+    @Autowired
+    ManyToManyFilter manyToManyFilter;
     /**
      * Configure View Resolver and set where to find the views for the application
      */
@@ -59,5 +64,15 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setBasename("messages");
         return messageSource;
+    }
+
+    /**
+     * Used to convert roles from string to object
+     * @param registry
+     */
+
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addConverter(manyToManyFilter);
     }
 }

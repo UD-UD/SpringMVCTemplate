@@ -20,5 +20,7 @@ public interface SampleModelService {
     List<SampleModel> findAll();
 
     void saveModel(SampleModel sampleModel);
+    void update(SampleModel sampleModel);
+    void delete(String id);
 
 }

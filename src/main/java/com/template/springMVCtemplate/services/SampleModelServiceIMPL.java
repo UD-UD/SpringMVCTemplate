@@ -35,6 +35,17 @@ public class SampleModelServiceIMPL implements SampleModelService {
 
     @Override
     public void saveModel(SampleModel sampleModel) {
+        sampleModel.getOneToOneBidirectional().setSampleModel(sampleModel);
         dao.save(sampleModel);
+    }
+
+    @Override
+    public void update(SampleModel sampleModel) {
+        dao.updateSample(sampleModel);
+    }
+
+    @Override
+    public void delete(String id) {
+        dao.deleteByName(id);
     }
 }

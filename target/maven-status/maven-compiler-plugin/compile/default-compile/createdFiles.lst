@@ -10,6 +10,11 @@ com/template/springMVCtemplate/model/mappingExample/ModelForManyToManyUnidirecti
 com/template/springMVCtemplate/model/mappingExample/ModelForOneToOne.class
 com/template/springMVCtemplate/configuration/HibernateConfig.class
 com/template/springMVCtemplate/dao/SampleDao.class
+com/template/springMVCtemplate/dao/ManytoManyDao.class
 com/template/springMVCtemplate/configuration/AppInit.class
 com/template/springMVCtemplate/services/SampleModelServiceIMPL.class
+com/template/springMVCtemplate/services/MamytoManyServices.class
 com/template/springMVCtemplate/dao/AbstractDao.class
+com/template/springMVCtemplate/dao/ManytoManyDaoImpl.class
+com/template/springMVCtemplate/converters/ManyToManyFilter.class
+com/template/springMVCtemplate/services/ManyToManyServicesImpl.class

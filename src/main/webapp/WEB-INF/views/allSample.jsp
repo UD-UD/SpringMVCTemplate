@@ -23,7 +23,7 @@
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Home Address</th>
+                            <%-- <th>Home Address</th> --%>
                             <th>PET Name</th>
                             <th>Office Address</th>
                             <th>Roles</th>
@@ -35,7 +35,7 @@
                     <c:forEach items="${allSampleList}" var="sample">
                         <tr>
                             <td>${sample.name}</td>
-                            <td>${sample.oneToOne.name}</td>
+                            <%-- <td>${sample.oneToOne.name}</td> --%>
                             <td>${sample.oneToOneBidirectional.name}</td>
                             <td>${sample.oneToOneForiegnKey.name}</td>
 

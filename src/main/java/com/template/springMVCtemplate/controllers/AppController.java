@@ -1,6 +1,8 @@
 package com.template.springMVCtemplate.controllers;
 
 import com.template.springMVCtemplate.model.SampleModel;
+import com.template.springMVCtemplate.model.mappingExample.ModelForManyToManyUnidirectional;
+import com.template.springMVCtemplate.services.MamytoManyServices;
 import com.template.springMVCtemplate.services.SampleModelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by ud on 21/4/17.
@@ -34,6 +37,8 @@ public class AppController {
     @Autowired
     private SampleModelService sampleModelService;
 
+    @Autowired
+    private MamytoManyServices mamytoManyServices;
     /**
      * The following RequestMapping says that if there is a request whose URL ends with "/" or "/list"
      * and the Request is a "GET Request" then below method will handle such request.
@@ -101,7 +106,28 @@ public class AppController {
 
     @RequestMapping(value = { "/edit-user-{ssoId}" }, method = RequestMethod.GET)
     public String editUser(@PathVariable String ssoId, ModelMap model) {
-        return "";
+        SampleModel sampleModel=sampleModelService.findById(Integer.parseInt(ssoId));
+        model.addAttribute("sampleModel",sampleModel);
+        model.addAttribute("edit",true);
+        return "newSample";
+    }
+
+
+    @RequestMapping(value={ "/edit-user-{ssoId}" },method = RequestMethod.POST)
+    public String updateSampleModel(@Valid SampleModel sampleModel, BindingResult result, ModelMap model){
+
+        if(result.hasErrors()) {
+            return "newSample";
+        }
+        sampleModelService.update(sampleModel);
+
+        return "success";
+    }
+
+    @RequestMapping(value = { "/delete-user-{ssoId}" }, method = RequestMethod.GET)
+    public String deleteUser(@PathVariable Integer ssoId) {
+        sampleModelService.delete(ssoId.toString());
+        return "redirect:/list";
     }
 
     /**
@@ -110,14 +136,10 @@ public class AppController {
      * @return a model object containing data.
      */
 
-    @ModelAttribute("sections")
-    public List<String> initializeSections() {
+    @ModelAttribute("techSkills")
+    public List<ModelForManyToManyUnidirectional> initializeSections() {
 
-        List<String> sections = new ArrayList<String>();
-        sections.add("Graduate");
-        sections.add("Post Graduate");
-        sections.add("Research");
-        return sections;
+        return mamytoManyServices.findAll() ;
     }
 
 

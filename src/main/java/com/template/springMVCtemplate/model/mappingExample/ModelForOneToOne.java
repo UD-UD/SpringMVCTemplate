@@ -10,7 +10,21 @@ import javax.persistence.Table;
  *
  * Here @OneToOne mapping is used.The id generated for the parent object(SampleModel) is used as the id of ModelForOneToOne.
  * This Model has no knowledge of it's parent object.
- */
+ * CascadeType.ALL : It persist both data parent and dependent.
+ * CascadeType.PERSISTENT : Same As above
+ * CascadeType.Merge : Does not persist child if child already present.
+ *
+ * for reference , look here : http://docs.oracle.com/javaee/6/api/javax/persistence/CascadeType.html
+ *
+ * CascadeType.PERSIST : means that save() or persist() operations cascade to related entities.
+ * CascadeType.MERGE : means that related entities are merged when the owning entity is merged.
+ * CascadeType.REFRESH : does the same thing for the refresh() operation.
+ * CascadeType.REMOVE : removes all related entities association with this setting when the owning entity is deleted.
+ * CascadeType.DETACH : detaches all related entities if a “manual detach” occurs.
+ * CascadeType.ALL : is shorthand for all of the above cascade operations.
+
+ *
+ * **/
 @Entity
 @Table(name="MODEL_ONE_TO_ONE")
 public class ModelForOneToOne {
