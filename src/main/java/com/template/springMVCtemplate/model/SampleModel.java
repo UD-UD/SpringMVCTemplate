@@ -85,8 +85,8 @@ import java.util.*;
  *
  * @JoinTable indicates that there is a link table which joins two tables via containing there keys.This annotation
  * is mainly used on the owning side of the relationship.joinColumns refers to the column name of owning side(ID of SampleModel),
- * and inverseJoinColumns refers to the column of inverse side of relationship(MANY_ID of ModelForManyToManyUnidirectional).Primary key of this joined table
- * is combination of ID & MANY_ID.
+ * and inverseJoinColumns refers to the column of inverse side of relationship(MANY_ID of ModelForManyToManyUnidirectional).
+ * Primary key of this joined table is combination of ID & MANY_ID.
  *
  * We can also put some validation constraint using JSR303 and hibernate-validator.
  * Here JSR303 is a specification and hibernate-validator is the implementation.

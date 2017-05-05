@@ -19,7 +19,7 @@ import java.util.List;
  * you can use Hibernate.initialize(Object obj) as you noted.
  */
 
-@Repository("userDao")
+@Repository("sampleDao")
 public class SampleDaoImpl extends AbstractDao<Integer,SampleModel> implements SampleDao {
     @Override
     public SampleModel findById(int id) {
